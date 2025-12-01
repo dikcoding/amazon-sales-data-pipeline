@@ -1,0 +1,28 @@
+checks for raw_invoices:
+  - schema:
+      warn:
+        when required column missing:
+          - index
+          - order_id
+          - Date
+          - Status
+          - Fulfilment
+          - sales_channel
+          - ship_service_level
+          - Style
+          - SKU
+          - Category
+          - Size
+          - ASIN
+          - courier_status
+          - Qty
+          - currency
+          - Amount
+          - ship_city
+          - ship_state
+          - ship_postal_code
+          - ship_country
+          - promotion_ids
+          - B2B
+          - fulfilled_by
+          - unnamed_22
