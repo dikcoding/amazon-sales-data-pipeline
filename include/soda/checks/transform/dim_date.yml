@@ -1,0 +1,16 @@
+checks for dim_date:
+  - schema:
+      fail:
+        when required column missing: [date_id, order_date, year, month, day]
+        when wrong column type:
+          date_id: date
+          order_date: date
+          year: integer
+          month: integer
+          day: integer
+
+  - duplicate_count(date_id) = 0:
+      name: Date IDs must be unique
+
+  - missing_count(date_id) = 0:
+      name: All rows must have date_id

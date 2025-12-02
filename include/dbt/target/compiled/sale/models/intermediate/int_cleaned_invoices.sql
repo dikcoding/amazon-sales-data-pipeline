@@ -1,3 +1,5 @@
+-- int_cleaned_invoices.sql
+
 WITH base AS (
     SELECT * FROM `ecommerce-project-479723`.`sale`.`stg_invoices`
 ),

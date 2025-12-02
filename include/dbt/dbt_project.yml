@@ -1,14 +1,18 @@
-name: "ecommerce_project"
-version: "1.0.0"
 config-version: 2
 
-profile: "default"
+name: "sale"
+version: "1.0"
+profile: "sale"
+
+model-paths: ["models"]
 
 models:
-  my_project:
+  sale:
     staging:
       +materialized: view
     intermediate:
       +materialized: table
     marts:
       +materialized: table
+    report:
+      +materialized: view

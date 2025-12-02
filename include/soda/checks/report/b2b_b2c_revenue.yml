@@ -1,0 +1,11 @@
+checks for b2b_b2c_revenue:
+  - missing_count(customer_type) = 0
+
+  - invalid_percent(customer_type) = 0:
+      valid values:
+        - B2B
+        - B2C
+
+  - missing_count(total_revenue) = 0
+  - min(total_revenue) >= 0
+  - row_count > 0

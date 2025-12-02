@@ -1,0 +1,18 @@
+checks for dim_product:
+  - schema:
+      fail:
+        when required column missing:
+          [product_id, sku, asin, style, category, size]
+        when wrong column type:
+          product_id: string
+          sku: string
+          asin: string
+          style: string
+          category: string
+          size: string
+
+  - duplicate_count(product_id) = 0:
+      name: Product IDs must be unique
+
+  - missing_count(product_id) = 0:
+      name: All rows must have product_id

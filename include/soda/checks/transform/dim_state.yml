@@ -1,0 +1,14 @@
+checks for dim_state:
+  - schema:
+      fail:
+        when required column missing: [state_id, ship_state, ship_country]
+        when wrong column type:
+          state_id: string
+          ship_state: string
+          ship_country: string
+
+  - duplicate_count(state_id) = 0:
+      name: State IDs must be unique
+
+  - missing_count(state_id) = 0:
+      name: All rows must have state_id

@@ -1,8 +1,16 @@
 
+  
+    
 
-  create or replace view `ecommerce-project-479723`.`sale`.`int_cleaned_invoices`
-  OPTIONS()
-  as WITH base AS (
+    create or replace table `ecommerce-project-479723`.`sale`.`int_cleaned_invoices`
+    
+    
+
+    OPTIONS()
+    as (
+      -- int_cleaned_invoices.sql
+
+WITH base AS (
     SELECT * FROM `ecommerce-project-479723`.`sale`.`stg_invoices`
 ),
 
@@ -34,5 +42,6 @@ transformed AS (
     WHERE quantity > 0
 )
 
-SELECT * FROM transformed;
-
+SELECT * FROM transformed
+    );
+  
