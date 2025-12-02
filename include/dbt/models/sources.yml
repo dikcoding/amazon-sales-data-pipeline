@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: sale
+    database: ecommerce-project-479723
+    schema: sale
+    tables:
+      - name: raw_invoices
+        description: "Raw Amazon sale data loaded from CSV"
+        columns:
+          - name: order_id
+            description: "Order identifier"
+          - name: Qty
+            description: "Quantity ordered"
+          - name: Amount
+            description: "Amount per order line"

@@ -9,4 +9,5 @@ airflow-webserver.pid
 webserver_config.py
 airflow.cfg
 airflow.db
-gcp/
+gcp/ 
+include/dbt/dbt_packages/
