@@ -1,8 +1,0 @@
-checks for top_products_revenue:
-  - missing_count(country) = 0
-  - missing_count(state) = 0
-  - missing_count(total_orders) = 0
-  - missing_count(total_revenue) = 0
-  - min(total_orders) >= 0
-  - min(total_revenue) >= 0
-  - row_count <= 10

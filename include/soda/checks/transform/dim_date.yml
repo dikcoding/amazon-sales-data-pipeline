@@ -1,10 +1,9 @@
 checks for dim_date:
   - schema:
       fail:
-        when required column missing: [date_id, order_date, year, month, day]
+        when required column missing: [date_id, year, month, day]
         when wrong column type:
           date_id: date
-          order_date: date
           year: integer
           month: integer
           day: integer

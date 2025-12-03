@@ -1,0 +1,5 @@
+checks for sale.fct_sales:
+  - row_count > 0
+  - missing_count(date_id) = 0
+  - missing_count(quantity) = 0
+  - avg(quantity) > 0

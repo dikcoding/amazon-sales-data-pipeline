@@ -1,6 +1,0 @@
-checks for revenue_by_state:
-  - missing_count(ship_state) = 0
-  - missing_count(revenue) = 0
-  - min(revenue) >= 0
-  - duplicate_count(ship_state) = 0
-  - row_count > 0

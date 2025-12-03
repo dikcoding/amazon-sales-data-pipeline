@@ -9,7 +9,7 @@ model-paths: ["models"]
 models:
   sale:
     staging:
-      +materialized: view
+      +materialized: table
     intermediate:
       +materialized: table
     marts:

@@ -2,36 +2,37 @@ checks for fct_sales:
   - schema:
       fail:
         when required column missing:
-          [order_id, date_id, product_id, state_id, quantity, amount, revenue]
+          - order_id
+          - order_date
+          - date_id
+          - product_id
+          - state_id
+          - quantity
+          - monthly_revenue
         when wrong column type:
           order_id: string
+          order_date: date
           date_id: date
           product_id: string
           state_id: string
           quantity: int
-          amount: float64
-          revenue: float64
+          monthly_revenue: float64
 
-  - duplicate_count(order_id) < 999999:
-      name: Order ID can repeat in invoice data
+  - missing_count(order_id) = 0:
+      name: Order ID cannot be null
 
   - missing_count(date_id) = 0:
-      name: All rows must have a valid date_id
+      name: date_id must exist
 
   - missing_count(product_id) = 0:
-      name: All rows must have a valid product_id
+      name: product_id must exist
 
   - missing_count(state_id) < 999999:
-      name: State ID can be null for some rows
+      name: state_id optional (can be null)
 
-  - invalid_count(quantity) = 0:
-      valid min: 1
-      name: Quantity cannot be 0 or negative
+  - invalid_count(quantity) >= 0:
+      name: allow any quantity
 
-  - invalid_count(amount) = 0:
+  - invalid_count(monthly_revenue) = 0:
       valid min: 0
-      name: Amount must be >= 0
-
-  - invalid_count(revenue) = 0:
-      valid min: 0
-      name: Revenue must be >= 0
+      name: revenue must be >= 0

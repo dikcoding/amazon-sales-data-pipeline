@@ -8,13 +8,12 @@
 
     OPTIONS()
     as (
-      -- int_cleaned_invoices.sql
-
-WITH base AS (
-    SELECT * FROM `ecommerce-project-479723`.`sale`.`stg_invoices`
+      WITH base AS (
+    SELECT *
+    FROM `ecommerce-project-479723`.`sale`.`stg_invoices`
 ),
 
-transformed AS (
+cleaned AS (
     SELECT
         order_id,
         order_date,
@@ -32,16 +31,17 @@ transformed AS (
         ship_postal_code,
         ship_country,
         courier_status,
-        quantity,
-        amount,
-        quantity * amount AS revenue,
+        SAFE_CAST(quantity AS INT64) AS quantity,
+        SAFE_CAST(amount AS FLOAT64) AS monthly_revenue,
         promotion_ids,
+        extra_flag,
         is_b2b,
-        COALESCE(fulfilled_by, 'UNKNOWN') AS fulfilled_by
+        fulfilled_by
+
     FROM base
-    WHERE quantity > 0
+    WHERE quantity >= 0
 )
 
-SELECT * FROM transformed
+SELECT * FROM cleaned
     );
   

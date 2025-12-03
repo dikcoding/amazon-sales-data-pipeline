@@ -1,6 +1,0 @@
-checks for monthly_sales_trend:
-  - missing_count(year) = 0
-  - missing_count(month) = 0
-  - missing_count(monthly_revenue) = 0
-  - min(monthly_revenue) >= 0
-  - row_count > 0
