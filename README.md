@@ -8,13 +8,11 @@ End-to-end pipeline for processing Amazon sales datasets from ingestion, data qu
 
 The dataset used is from Kaggle:
 
-[Amazon Sale](https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data?select=Amazon+Sale+Report.csv).
+[Amazon Sale](https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data?select=Amazon+Sale+Report.csv)
 
 ---
 
 ## Project Overview
-
-[![PDF](https://img.shields.io/badge/Documentation-PDF-blue)](Amazon%20Sale%20Data%20Pipeline.pdf)
 
 This project simulates an end-to-end Data Engineering workflow aligned with real industry practices, including:
 
